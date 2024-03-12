@@ -73,6 +73,11 @@ Some features of the terrform scripts:
 
 This will provision the cluster and all associated resources. The operation will take a while before all the resources are successfully provisioned.
 
+```
+update the Kubernetes context
+aws eks update-kubeconfig --name my-eks-cluster --region us-east-1
+```
+
 ## Deploy Kubernetes manifests
 
 1. Once the EKS cluster is up and running, we are ready to deploy our three-tier application.
