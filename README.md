@@ -99,6 +99,14 @@ Update your hosted zone and create the CNAME records for the ingress and monitor
     ```
 > In Route 53, create a CNAME record for mycloudapphosting.com. The key is *api* and value will be *ADDRESS* of the ingress. For example: *k8s-demolb-fa1658a882-147059283.us-east-1.elb.amazonaws.com*
 
+- In ingress for monitor, I have used *monitor.mycloudapphosting.com* as host
+    ```
+    spec:
+      ingressClassName: alb
+      rules:
+        - host: monitor.mycloudapphosting.com
+    ```
+> In Route 53, create a CNAME record for mycloudapphosting.com. The key is *monitor* and value will be *ADDRESS* of the ingress. For example: *k8s-demolb-fa1658a882-147059283.us-east-1.elb.amazonaws.com*
 
 - Below image for reference:
 <kbd>
@@ -107,5 +115,5 @@ Update your hosted zone and create the CNAME records for the ingress and monitor
 
 Once this is done, please wait for few seconds or minutes for the change to reflect in AWS. 
 
-## Now we are ready to access the application via https://app.mycloudapphosting.com
+## Now we are ready to access the application via https://app.mycloudapphosting.com and access the prometheus dashboard via https://monitor.mycloudapphosting.com
 
