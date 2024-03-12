@@ -19,15 +19,15 @@ module "eks" {
 
   eks_managed_node_groups = {
     general = {
-      desired_size = 1
-      min_size     = 1
+      desired_size = 3
+      min_size     = 2
       max_size     = 10
 
       labels = {
         role = "general"
       }
 
-      instance_types = ["t3.small"]
+      instance_types = ["t3.medium"]
       capacity_type  = "ON_DEMAND"
     }
 
